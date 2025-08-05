@@ -105,7 +105,14 @@ def admin():
     login_count = cur.fetchone()[0]
     cur.close()
     conn.close()
-    return render_template('admin.html', login_count=login_count)
+    pgadmin_email = os.environ['PGADMIN_DEFAULT_EMAIL']
+    pgadmin_password = os.environ['PGADMIN_DEFAULT_PASSWORD']
+    return render_template(
+        'admin.html',
+        login_count=login_count,
+        pgadmin_email=pgadmin_email,
+        pgadmin_password=pgadmin_password
+    )
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

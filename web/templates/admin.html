@@ -8,5 +8,11 @@
     <p>Admin login count: {{ login_count }}</p>
     <a href="{{ url_for('index') }}">Back to Home</a>
     <a href="{{ url_for('logout') }}">Logout</a>
+    <h2>Admin Tools</h2>
+    <a href="http://localhost:5050" target="_blank">Open pgAdmin</a>
+    <p>
+        <strong>pgAdmin username:</strong> {{ pgadmin_email }}<br>
+        <strong>pgAdmin password:</strong> {{ pgadmin_password }}
+    </p>
 </body>
 </html>
