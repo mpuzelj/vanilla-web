@@ -7,13 +7,14 @@
 <body>
     <h1>Login</h1>
     {% if error %}
-        <p style="color:red;">{{ error }}</p>
+        <p class="flash-message">{{ error }}</p>
     {% endif %}
     <form method="POST" action="{{ url_for('login') }}">
         <label>Username: <input type="text" name="username" required></label><br>
         <label>Password: <input type="password" name="password" required></label><br>
         <button type="submit">Login</button>
     </form>
-    <a href="{{ url_for('index') }}">Back to Home</a>
+    <a href="{{ url_for('register') }}">Register</a> <!-- Add this line -->
+    <a href="{{ url_for('index') }}">Home</a>
 </body>
 </html>
