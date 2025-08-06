@@ -8,7 +8,7 @@
     <h1>Welcome to Vanilla Web!</h1>
     <nav>
         {% if current_user.is_authenticated %}
-            <span>Welcome, {{ current_user.username }}!</span>
+            <span>Welcome, {{ current_user.email }}!</span>
             <a href="{{ url_for('logout') }}">Logout</a>
             {% if current_user.is_admin %}
                 | <a href="{{ url_for('admin') }}">Admin Console</a>
