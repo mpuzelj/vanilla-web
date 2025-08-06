@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "vanilla-web-db",
+      "Group": "Servers",
+      "Host": "db",
+      "Port": 5432,
+      "MaintenanceDB": "vanilla-web-db",
+      "Username": "admin",
+      "SSLMode": "prefer"
+    }
+  }
+}
