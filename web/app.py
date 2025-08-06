@@ -81,7 +81,10 @@ def register():
             return redirect(url_for('login'))
         except Exception as e:
             conn.rollback()
-            flash('Registration failed: ' + str(e))
+            if 'duplicate key value violates unique constraint' in str(e):
+                flash('Registration failed: Email address already registered.')
+            else:
+                flash('Registration failed: ' + str(e))
         finally:
             cur.close()
             conn.close()

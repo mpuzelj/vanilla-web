@@ -12,8 +12,8 @@ This project is:
 ## Project Structure
 
 ```
-C:.
 │   docker-compose.yml
+│   LICENSE.md
 │   README.md
 │
 ├───db
@@ -32,6 +32,8 @@ C:.
     │   requirements.txt
     │
     ├───static
+    │       normalize.css
+    │       skeleton.css
     │       style.css
     │
     ├───templates
@@ -42,6 +44,15 @@ C:.
     │
     └───tools
 ```
+
+---
+
+## Styling
+
+This project uses [Skeleton CSS] for minimal default styling.  
+- `normalize.css` is used for cross-browser consistency.
+- `skeleton.css` provides a clean, responsive base.
+- `style.css` contains custom overrides and tweaks.
 
 ---
 
@@ -115,5 +126,10 @@ C:.
 - Registration requires email verification. All verification emails are captured by MailHog.
 - pgAdmin is pre-configured to connect to the database.
 - For development, all passwords and secrets are set to defaults. Change them for production use.
+- Special thanks to Dave Gamache, the author of [Skeleton CSS](https://github.com/dhg/Skeleton). 
 
 ---
+
+## License
+
+All parts of Vanilla Web Project are free to use under the open-source MIT license.

@@ -2,18 +2,66 @@
 <html>
 <head>
     <title>Admin Console</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='skeleton.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .tiles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 2em;
+        }
+        .tile {
+            background: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2em 2em 1em 2em;
+            min-width: 220px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .tile:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .tile-title {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+        .tile-link {
+            display: block;
+            margin: 1em 0 0.5em 0;
+        }
+        .tile-cred {
+            font-size: 0.95em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+    </style>
 </head>
 <body>
-    <h1>Admin Console</h1>
-    <p>Admin login count: {{ login_count }}</p>
-    <a href="{{ url_for('index') }}">Back to Home</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-    <h2>Admin Tools</h2>
-    <a href="http://localhost:5050" target="_blank">Open pgAdmin</a>
-    <p>
-        <strong>pgAdmin username:</strong> {{ pgadmin_email }}<br>
-        <strong>pgAdmin password:</strong> {{ pgadmin_password }}
-    </p>
-    <a href="http://localhost:8025" target="_blank">Open SMTP Mailhog</a>
+    <div class="container" style="max-width: 800px; margin: 2em auto;">
+        <h1 style="text-align: center;">Admin Console</h1>
+        <p style="text-align: center;">Admin login count: {{ login_count }}</p>
+        <nav style="text-align: center; margin-bottom: 2em;">
+            <a href="{{ url_for('index') }}">Back to Home</a> |
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+        <div class="tiles">
+            <div class="tile">
+                <div class="tile-title">pgAdmin</div>
+                <a class="tile-link" href="http://localhost:5050" target="_blank">Open pgAdmin</a>
+                <div class="tile-cred"><strong>Username:</strong> {{ pgadmin_email }}</div>
+                <div class="tile-cred"><strong>Password:</strong> {{ pgadmin_password }}</div>
+            </div>
+            <div class="tile">
+                <div class="tile-title">MailHog</div>
+                <a class="tile-link" href="http://localhost:8025" target="_blank">Open SMTP MailHog</a>
+                <div class="tile-cred">View all outgoing emails</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

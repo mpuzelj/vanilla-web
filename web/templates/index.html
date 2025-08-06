@@ -2,21 +2,25 @@
 <html>
 <head>
     <title>Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='skeleton.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome to Vanilla Web!</h1>
-    <nav>
-        {% if current_user.is_authenticated %}
-            <span>Welcome, {{ current_user.email }}!</span>
-            <a href="{{ url_for('logout') }}">Logout</a>
-            {% if current_user.is_admin %}
-                | <a href="{{ url_for('admin') }}">Admin Console</a>
+    <div class="container" style="max-width: 600px; margin: 2em auto;">
+        <h1 style="text-align: center;">Welcome to Vanilla Web!</h1>
+        <nav style="text-align: center; margin-bottom: 2em;">
+            {% if current_user.is_authenticated %}
+                <span>Welcome, {{ current_user.email }}!</span>
+                <a href="{{ url_for('logout') }}">Logout</a>
+                {% if current_user.is_admin %}
+                    | <a href="{{ url_for('admin') }}">Admin Console</a>
+                {% endif %}
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a> |
+                <a href="{{ url_for('register') }}">Register</a>
             {% endif %}
-        {% else %}
-            <a href="{{ url_for('login') }}">Login</a> |
-            <a href="{{ url_for('register') }}">Register</a>
-        {% endif %}
-    </nav>
+        </nav>
+    </div>
 </body>
 </html>
