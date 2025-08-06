@@ -126,10 +126,18 @@ This project uses [Skeleton CSS] for minimal default styling.
 - Registration requires email verification. All verification emails are captured by MailHog.
 - pgAdmin is pre-configured to connect to the database.
 - For development, all passwords and secrets are set to defaults. Change them for production use.
-- Special thanks to Dave Gamache, the author of [Skeleton CSS](https://github.com/dhg/Skeleton). 
 
 ---
 
-## License
+## Third-Party Licenses & Acknowledgements
 
-All parts of Vanilla Web Project are free to use under the open-source MIT license.
+This project uses the following open-source components:
+
+- [Skeleton CSS](https://github.com/dhg/Skeleton) — MIT License
+- [MailHog](https://github.com/mailhog/MailHog) — MIT License
+- [PostgreSQL](https://www.postgresql.org/) — PostgreSQL License
+- [pgAdmin](https://www.pgadmin.org/) — PostgreSQL Licence
+- [Python](https://www.python.org/) — Python Software Foundation License
+- [Flask](https://flask.palletsprojects.com/) — BSD License
+
+Please refer to each project's website for full license details.
