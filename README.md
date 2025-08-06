@@ -4,7 +4,7 @@
 
 This project is:
 - a simple web application with user registration, email verification, and admin tools
-- it uses Docker Compose to orchestrate all required services
+- it uses Docker Compose to orchestrate all required services locally
 - includes Postgres DB, pgAdmin and Mailhog mock email server
 
 ---
