@@ -91,7 +91,9 @@ This project uses [Skeleton CSS] for minimal default styling.
 
 1. **Clone the repository:**
    ```
-   git clone <your-repo-url>
+   # Clone the repository
+   git clone https://github.com/mpuzelj/vanilla-web.git
+   # Move into the project folder
    cd vanilla-web
    ```
 
