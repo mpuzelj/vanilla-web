@@ -1,0 +1,114 @@
+/* Mobile-first responsive improvements */
+
+/* Ensure proper box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Improve container responsiveness */
+.container {
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+/* Flash messages styling */
+.flash-message {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+/* Improve navigation for mobile */
+nav {
+    padding: 1rem 0;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: #1EAEDB;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Form improvements */
+form {
+    width: 100%;
+}
+
+/* Button improvements for mobile */
+.button, .button-primary {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Admin tiles responsive improvements */
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.tile {
+    flex: 1 1 280px;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .tiles {
+        gap: 0.5rem;
+    }
+    
+    .tile {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+    
+    /* Stack navigation links on very small screens */
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    
+    /* Adjust headings for mobile */
+    h1 {
+        font-size: 2.4rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.25rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .button, .button-primary {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
